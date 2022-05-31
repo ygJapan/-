@@ -1,6 +1,6 @@
 import React from 'react'
+import { AddTaskCardButton } from './button/AddTaskCardButton'
 import { TaskCard } from './TaskCard'
-import { AddTaskCardButton } from './AddTaskCardButton'
 
 export const TaskCards = () => {
   return (
