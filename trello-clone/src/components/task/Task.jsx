@@ -8,7 +8,7 @@ export const Task = ({ task, taskList, setTaskList }) => {
 
   return (
     <Draggable index={task.id} draggableId={task.draggableId}>
-        {(provided) => {
+        {(provided) => (
             <div
                 className='taskBox'
                 key={task.id}
@@ -26,7 +26,7 @@ export const Task = ({ task, taskList, setTaskList }) => {
                     <i className="fa-solid fa-trash-can"></i>
                 </button>
             </div>
-        }}
+        )}
     </Draggable>
   )
 }
