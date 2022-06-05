@@ -13,7 +13,7 @@ export const Task = ({ task, taskList, setTaskList }) => {
                 className='taskBox'
                 key={task.id}
                 ref={provided.innerRef}
-                {...provided.droppableProps}
+                {...provided.draggableProps}
                 {...provided.dragHandleProps}
             >
                 <p className='taskText'>
