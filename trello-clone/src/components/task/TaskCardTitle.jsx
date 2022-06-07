@@ -15,7 +15,6 @@ export const TaskCardTitle = () => {
 
     const handleChange = (e) => {
         setInputCardTitle(e.target.value);
-        console.log();
     };
 
     const handleBlur = (e) => {
