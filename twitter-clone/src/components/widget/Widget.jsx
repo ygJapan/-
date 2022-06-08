@@ -12,6 +12,7 @@ import {
   TwitterVideoEmbed,
   TwitterOnAirButton
 } from 'react-twitter-embed';
+import "./Widget.css";
 
 
 function Widget() {
