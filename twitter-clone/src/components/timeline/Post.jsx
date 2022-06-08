@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { forwardRef, useEffect } from 'react'
 import { Avatar } from '@material-ui/core'
 import VerifiedUserIcon from '@material-ui/icons/VerifiedUser';
 import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
@@ -7,9 +7,10 @@ import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import PublishOutlinedIcon from '@material-ui/icons/PublishOutlined';
 import "./Post.css";
 
-function Post({ displayName, userName, verified, text, avatar, image }) {
+const Post = forwardRef(( { displayName, userName, verified, text, avatar, image }, ref ) => {
+
   return (
-    <div className='post'>
+    <div className='post' ref={ref}>
         {/* ツイート主アイコン */}
         <div className='post_avatar'>
             <Avatar src={avatar}/>
@@ -50,6 +51,6 @@ function Post({ displayName, userName, verified, text, avatar, image }) {
         </div>
     </div>
   )
-}
+});
 
-export default Post
+export default Post;
