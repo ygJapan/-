@@ -7,12 +7,12 @@ import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import PublishOutlinedIcon from '@material-ui/icons/PublishOutlined';
 import "./Post.css";
 
-function Post() {
+function Post({ displayName, userName, verified, text, avatar, image }) {
   return (
     <div className='post'>
         {/* ツイート主アイコン */}
         <div className='post_avatar'>
-            <Avatar />
+            <Avatar src={avatar}/>
         </div>
 
         {/* アイコン以外 */}
@@ -23,22 +23,22 @@ function Post() {
 
                 {/* 名前とID */}
                 <div className='post_headerText'>
-                    <h3>プログラミングチュートリアル
+                    <h3>{displayName}
                         <span className='post_headerSpecial'>
-                            <VerifiedUserIcon className='post_badge' />
-                            @YgJapan
+                            {verified && <VerifiedUserIcon className='post_badge' />}
+                            @{userName}
                         </span>
                     </h3>
                 </div>
 
                 {/* ツイート内容 */}
                 <div className='post_headerDescription'>
-                    <p>ReactでTwitterクローンを作ってみた</p>
+                    <p>{text}</p>
                 </div>
             </div>
 
             {/* 画像 */}
-            <img src="https://source.unsplash.com/random" />
+            <img src={image} />
 
             {/* フッター(リプ、RT、いいね、ブックマーク) */}
             <div className='post_footer'>
