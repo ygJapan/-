@@ -32,7 +32,7 @@ function TweetBox() {
     <div className='tweetBox'>
         <form>
             <div className='tweetBox_input'>
-                <Avatar />
+                <Avatar src="https://1.bp.blogspot.com/--6-JiW_88ts/X1CK45ov1mI/AAAAAAABavs/SdToo6Tz2SQ43pPQHpbzg4kwsdwSv7GhQCNcBGAsYHQ/s1600/dog_great_pyrenees.png"/>
                 <input
                   placeholder='いまどうしてる？'
                   type="text"

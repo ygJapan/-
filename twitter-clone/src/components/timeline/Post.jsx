@@ -7,8 +7,23 @@ import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import PublishOutlinedIcon from '@material-ui/icons/PublishOutlined';
 import "./Post.css";
 
-const Post = forwardRef(( { displayName, userName, verified, text, avatar, image }, ref ) => {
+const timestampToTime = (timestamp) => {
+    const date = new Date(timestamp * 1000);
+    const MM = `${date.getMonth() + 1}`.slice(-2);
+    const dd = `${date.getDate()}`.slice(-2);
+    const HH = `0${date.getHours()}`.slice(-2);
+    const mm = `0${date.getMinutes()}`.slice(-2);
 
+    const tweetDate = `${MM}月${dd}日`
+    const now = `${new Date().getMonth()+1}月${new Date().getDate()}日`;
+    if (tweetDate === now) {
+        return `${HH}時${mm}分`;
+    } else {
+        return `${MM}月${dd}日`;
+    }
+}
+
+const Post = forwardRef(( { displayName, userName, verified, timestamp, text, avatar, image }, ref ) => {
   return (
     <div className='post' ref={ref}>
         {/* ツイート主アイコン */}
@@ -27,7 +42,7 @@ const Post = forwardRef(( { displayName, userName, verified, text, avatar, image
                     <h3>{displayName}
                         <span className='post_headerSpecial'>
                             {verified && <VerifiedUserIcon className='post_badge' />}
-                            @{userName}
+                            @{userName} - {timestampToTime(timestamp)}
                         </span>
                     </h3>
                 </div>

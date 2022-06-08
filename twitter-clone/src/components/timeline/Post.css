@@ -46,6 +46,10 @@ p {
     color: gray;
 }
 
+.post_timestamp {
+    margin-left: 20px;
+}
+
 .post_avatar {
     padding: 15px;
 }

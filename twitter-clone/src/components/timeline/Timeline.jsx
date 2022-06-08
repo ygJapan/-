@@ -40,6 +40,7 @@ function Timeline() {
                     displayName={post.displayName}
                     userName={post.userName}
                     verified={post.verified}
+                    timestamp={post.timestamp}
                     text={post.text}
                     avatar={post.avatar}
                     image={post.image}
