@@ -1,19 +1,20 @@
 import { useState } from 'react';
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { useNavigate, Link } from 'react-router-dom';
 import auth from '../firebase';
-import { useAuthContext } from '../context/AuthContext';
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 const SignUp = () => {
-  const { user } = useAuthContext();
+  const navigate  = useNavigate();
   const handleSubmit = (event) => {
     event.preventDefault();
     const { email, password } = event.target.elements;
-    auth.createUserWithEmailAndPassword(email.value, password.value);
+    createUserWithEmailAndPassword(auth, email.value, password.value);
+    navigate('/');
   };
 
   return (
     <div>
-      <h1>ユーザ登録 {user.email}</h1>
+      <h1>ユーザ登録</h1>
       <form onSubmit={handleSubmit}>
         <div>
           <label>メールアドレス</label>
@@ -25,6 +26,9 @@ const SignUp = () => {
         </div>
         <div>
           <button>登録</button>
+        </div>
+        <div>
+          ログイン画面は<Link to={'/login'}>こちら</Link>から
         </div>
       </form>
     </div>
