@@ -33,11 +33,11 @@ const Login = () => {
       <form onSubmit={handleSubmit}>
         <div>
           <label>メールアドレス</label>
-          <input name="email" type="email" placeholder="email" />
+          <input name="email" type="email" placeholder="email" autoComplete="off"/>
         </div>
         <div>
           <label>パスワード</label>
-          <input name="password" type="password" placeholder="password" />
+          <input name="password" type="password" placeholder="password" autoComplete="off"/>
         </div>
         <div>
           <button>ログイン</button>
